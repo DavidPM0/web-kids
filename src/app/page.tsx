@@ -1,222 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
-
-// Componente de búsqueda con tabs estilo original pero con funcionalidad Expedia
-function SearchSection() {
-  const [activeTab, setActiveTab] = useState("venues");
-
-  const houstonAreas = [
-    "Downtown Houston",
-    "The Woodlands",
-    "Sugar Land",
-    "Katy",
-    "Pearland",
-    "Cypress",
-    "Spring",
-    "Tomball",
-    "Richmond",
-    "Kingwood",
-  ];
-
-  const serviceTypes = [
-    "Food & Catering",
-    "Decoration",
-    "Inflatables",
-    "Entertainment",
-    "Rentals",
-  ];
-
-  return (
-    <section className="pt-44 px-6 md:px-20 lg:px-40">
-      <div className="mx-auto">
-        {/* Imagen del león original */}
-        <Image
-          src="/pro-izquierda.png"
-          alt="Kids Party"
-          width={130}
-          height={130}
-          className="object-cover mx-auto mb-6"
-        />
-
-        {/* Título original */}
-        <h2 className="text-4xl font-bold text-[#1C3658] mb-6 text-center">
-          How old is your kid?
-        </h2>
-
-        {/* Tabs limpios y elegantes */}
-        <div className="flex justify-center mb-8">
-          <div className="bg-white rounded-lg border border-[#1C3658] p-2 shadow-[3px_3px_0_#000000]">
-            <button
-              onClick={() => setActiveTab("venues")}
-              className={`px-8 py-3 rounded-md font-semibold transition-colors ${
-                activeTab === "venues"
-                  ? "bg-[#1C3658] text-white"
-                  : "text-[#1C3658] hover:bg-[#F8BD36]/10"
-              }`}
-            >
-              🏢 Venues
-            </button>
-            <button
-              onClick={() => setActiveTab("services")}
-              className={`px-8 py-3 rounded-md font-semibold transition-colors ml-2 ${
-                activeTab === "services"
-                  ? "bg-[#1C3658] text-white"
-                  : "text-[#1C3658] hover:bg-[#F8BD36]/10"
-              }`}
-            >
-              🎉 Services
-            </button>
-          </div>
-        </div>
-
-        {/* Formularios con el estilo original */}
-        {activeTab === "venues" ? (
-          // Formulario de Venues - estilo original
-          <form className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                When are you planning to celebrate?
-              </label>
-              <input
-                type="date"
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                How many kids are going to be invited *
-              </label>
-              <input
-                type="number"
-                placeholder="Enter number of kids"
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Any preferences on party?
-              </label>
-              <input
-                type="text"
-                placeholder="Active"
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                First Name
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your first name"
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Your Email
-              </label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Location in Houston
-              </label>
-              <select className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]">
-                <option value="">Select area</option>
-                {houstonAreas.map((area) => (
-                  <option key={area} value={area}>
-                    {area}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="md:col-span-3">
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Additional Message
-              </label>
-              <textarea
-                placeholder="Enter your additional message"
-                rows={2}
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658] resize-none"
-              />
-            </div>
-
-            <div className="md:col-span-3 flex justify-center mt-4">
-              <button type="submit">Explore Venues</button>
-            </div>
-          </form>
-        ) : (
-          // Formulario de Services - nuevo pero con estilo original
-          <form className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Type of Service
-              </label>
-              <select className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]">
-                <option value="">Select service</option>
-                {serviceTypes.map((service) => (
-                  <option key={service} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">Date</label>
-              <input
-                type="date"
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
-              />
-            </div>
-
-            <div>
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Location in Houston
-              </label>
-              <select className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]">
-                <option value="">Select area</option>
-                {houstonAreas.map((area) => (
-                  <option key={area} value={area}>
-                    {area}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="md:col-span-3">
-              <label className="block text-lg text-[#1C3658] mb-1">
-                Additional Info
-              </label>
-              <textarea
-                placeholder="e.g., clown, face painting, specific requirements..."
-                rows={2}
-                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658] resize-none"
-              />
-            </div>
-
-            <div className="md:col-span-3 flex justify-center mt-4">
-              <button type="submit">Search Services</button>
-            </div>
-          </form>
-        )}
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
@@ -274,8 +56,129 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Search Section - Estilo Original con Tabs */}
-      <SearchSection />
+      {/* Formulario */}
+      <section className="pt-44 px-6 md:px-20 lg:px-40">
+        <div className="mx-auto">
+          <Image
+            src="/pro-izquierda.png"
+            alt="Kids Party"
+            width={130}
+            height={130}
+            className="object-cover mx-auto mb-6"
+          />
+          <h2 className="text-4xl font-bold text-[#1C3658] mb-6 text-center">
+            How old is your kid?
+          </h2>
+
+          <form className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* When are you planning to celebrate? */}
+            <div>
+              <label className="block text-lg text-[#1C3658] mb-1">
+                When are you planning to celebrate?
+              </label>
+              <input
+                type="text"
+                placeholder="Choose Date"
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
+              />
+            </div>
+
+            {/* How many kids */}
+            <div>
+              <label className="block text-lg text-[#1C3658] mb-1">
+                How many kids are going to be invited *
+              </label>
+              <input
+                type="number"
+                placeholder="Enter number of kids"
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
+              />
+            </div>
+
+            {/* Preferences */}
+            <div>
+              <label className="block text-lg text-[#1C3658] mb-1">
+                Any preferences on party?
+              </label>
+              <input
+                type="text"
+                placeholder="Active"
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
+              />
+            </div>
+
+            {/* First Name */}
+            <div>
+              <label className="block text-lg text-[#1C3658] mb-1">
+                First Name
+              </label>
+              <input
+                type="text"
+                placeholder="Enter your first name"
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="block text-lg text-[#1C3658] mb-1">
+                Your Email
+              </label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
+              />
+            </div>
+
+            {/* Mobile */}
+            {/* Location */}
+            <div>
+              <label className="block text-lg text-[#1C3658] mb-1">
+                Location
+              </label>
+              <select
+                defaultValue="" // Usamos defaultValue para que el placeholder funcione
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
+              >
+                <option value="" disabled>
+                  Select an area
+                </option>
+                <option value="downtown">Downtown</option>
+                <option value="midtown">Midtown</option>
+                <option value="galleria_uptown">Galleria / Uptown</option>
+                <option value="montrose">Montrose</option>
+                <option value="the_heights">The Heights</option>
+                <option value="river_oaks">River Oaks</option>
+                <option value="west_university">West University</option>
+                <option value="memorial">Memorial</option>
+                <option value="katy">Katy</option>
+                <option value="sugar_land">Sugar Land</option>
+                <option value="the_woodlands">The Woodlands</option>
+                <option value="clear_lake">Clear Lake</option>
+                <option value="spring_branch">Spring Branch</option>
+              </select>
+            </div>
+
+            {/* Additional Message */}
+            <div className="md:col-span-3">
+              <label className="block text-lg text-[#1C3658] mb-1">
+                Additional Message
+              </label>
+              <textarea
+                placeholder="Enter your additional message"
+                rows={2}
+                className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658] resize-none"
+              />
+            </div>
+
+            {/* Button */}
+            <div className="md:col-span-3 flex justify-center mt-4">
+              <button type="submit">Explore Venues</button>
+            </div>
+          </form>
+        </div>
+      </section>
 
       {/* Productos */}
       <section className="py-44 px-40">
