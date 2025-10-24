@@ -1,3 +1,4 @@
+import { Button, buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
             All In One Place. Whether It's Unicorns, Dinosaurs, Or Bounce
             Castles, BashWish Makes It Easy.
           </p>
+          <Button variant="golden" size="golden">
+            Browse Venue
+          </Button>
           <Image
             src="/hero-abajo.png"
             alt="bashwish"
@@ -174,7 +178,9 @@ export default function Home() {
 
             {/* Button */}
             <div className="md:col-span-3 flex justify-center mt-4">
-              <button type="submit">Explore Venues</button>
+              <Button variant="golden" size="golden">
+                Explore Venues
+              </Button>
             </div>
           </form>
         </div>
@@ -228,7 +234,9 @@ export default function Home() {
         </div>
         {/* Botón final */}
         <div className="text-center mt-14">
-          <button>Shop All Products</button>
+          <Button variant="golden" size="golden">
+            Show All Products
+          </Button>
         </div>
       </section>
 
@@ -393,7 +401,9 @@ export default function Home() {
               <p>Monday - Friday (8.00am To 8.00pm)</p>
               <p>Saturday - Sunday (10.00am To 5.00pm)</p>
             </div>
-            <button>Shop All Products</button>
+            <Button variant="golden" size="golden">
+              Shop All Products
+            </Button>
           </div>
 
           <div className="md:w-1/2 md:mt-0 flex justify-end">

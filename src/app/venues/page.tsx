@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function VenuesPage() {
@@ -102,12 +103,12 @@ export default function VenuesPage() {
 
                 {/* Contenedor para los botones */}
                 <div className="flex gap-4 pt-4">
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded">
+                  <Button variant="golden" size="golden">
                     View Profile
-                  </button>
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded">
+                  </Button>
+                  <Button variant="golden" size="golden">
                     Check availability/Book
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>

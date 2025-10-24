@@ -1,4 +1,5 @@
-import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function PartyGenie() {
   return (
@@ -31,12 +32,16 @@ export default function PartyGenie() {
 
           {/* Formulario */}
           <div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">Let the Party Genie Plan It:</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">
+              Let the Party Genie Plan It:
+            </h2>
             <p className="text-lg mb-6 leading-relaxed">
-              There Are Many Variations Of Passages Of Lorem Ipsum Available, But The Majority Have
-              Suffered Alteration In Some Form. By Injected Humour, Or Randomised Words Which Don’t
-              Look Even Slightly Believable. If You Are Going To Use A Passage Of Lorem Ipsum, You
-              Need To Be Sure There Isn’t Anything Embarrassing Hidden In The Middle Of Text.
+              There Are Many Variations Of Passages Of Lorem Ipsum Available,
+              But The Majority Have Suffered Alteration In Some Form. By
+              Injected Humour, Or Randomised Words Which Don’t Look Even
+              Slightly Believable. If You Are Going To Use A Passage Of Lorem
+              Ipsum, You Need To Be Sure There Isn’t Anything Embarrassing
+              Hidden In The Middle Of Text.
             </p>
 
             <form className="space-y-4">
@@ -62,11 +67,9 @@ export default function PartyGenie() {
               ></textarea>
 
               <div>
-                <button
-                  type="submit"
-                >
+                <Button variant="golden" size="golden" type="submit">
                   EXPLORE MORE
-                </button>
+                </Button>
               </div>
             </form>
           </div>

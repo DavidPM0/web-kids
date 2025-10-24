@@ -68,25 +68,25 @@ export default function Header() {
             </Link>
 
             <Link
+              href="/services"
+              className="text-[#1C3658] font-semibold hover:text-[#F8BD36] transition-colors px-4 py-2 rounded-lg hover:bg-[#F8BD36]/10"
+            >
+              Services
+            </Link>
+
+            <Link
               href="/party-genie"
               className="text-[#1C3658] font-semibold hover:text-[#F8BD36] transition-colors px-4 py-2 rounded-lg hover:bg-[#F8BD36]/10"
             >
               Party Genie
             </Link>
 
-            <Link
-              href="/login"
-              className="text-[#1C3658] font-semibold hover:text-[#F8BD36] transition-colors px-4 py-2 rounded-lg hover:bg-[#F8BD36]/10"
-            >
-              Sign in
-            </Link>
-
             {/* Botón List your property al estilo Expedia */}
             <Link
-              href="/list-property"
-              className="bg-[#F8BD36] text-[#1C3658] font-semibold px-4 py-2 rounded-lg border border-[#000000] shadow-[2px_2px_0_#000000] hover:bg-[#f7a600] transition-colors"
+              href="/login"
+              className="bg-[#F8BD36] text-[#1C3658] font-semibold px-4 py-2 rounded-lg border border-[#000000] shadow-[2px_2px_0_#000000] hover:bg-[#f7a600] transition-colors w-[7rem] text-center"
             >
-              List your venue
+              Login
             </Link>
           </div>
 
