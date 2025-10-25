@@ -50,6 +50,12 @@ const defaultImages: PropertyImage[] = [
     category: "exterior",
     description: "Stunning exterior",
   },
+  {
+    id: "7",
+    url: "/venue-detail-image/image-rect.jpg",
+    category: "room",
+    description: "Charming attic",
+  },
 ];
 
 interface PropertyImageGalleryProps {
@@ -101,20 +107,22 @@ export default function PropertyImageGallery({
 
       {/* Modal que contiene toda la lógica interna */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-[90vw] h-[90vh] p-0">
+        <DialogContent className="!h-[90vh] !w-[95vw] !max-w-[95vw] p-0 flex flex-col">
           <DialogTitle className="sr-only">
             {currentView === "grid" ? "Photo Gallery" : "Photo Viewer"}
           </DialogTitle>
-          <GalleryModalContent
-            images={images}
-            currentView={currentView}
-            currentFilter={currentFilter}
-            selectedImageIndex={selectedImageIndex}
-            onFilterChange={handleFilterChange}
-            onGridImageClick={handleGridImageClick}
-            onBackToGrid={handleBackToGrid}
-            onViewChange={setCurrentView}
-          />
+          <div className="flex-1 min-h-0">
+            <GalleryModalContent
+              images={images}
+              currentView={currentView}
+              currentFilter={currentFilter}
+              selectedImageIndex={selectedImageIndex}
+              onFilterChange={handleFilterChange}
+              onGridImageClick={handleGridImageClick}
+              onBackToGrid={handleBackToGrid}
+              onViewChange={setCurrentView}
+            />
+          </div>
         </DialogContent>
       </Dialog>
     </div>

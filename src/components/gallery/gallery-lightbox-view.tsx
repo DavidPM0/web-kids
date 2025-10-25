@@ -25,7 +25,7 @@ export default function GalleryLightboxView({
   return (
     <div className="h-full flex flex-col">
       {/* Header con botón de volver */}
-      <div className="flex items-center justify-between p-4 border-b">
+      <div className="flex items-center justify-between p-4 border-b bg-white">
         <Button
           variant="ghost"
           onClick={onBackToGrid}
@@ -39,9 +39,9 @@ export default function GalleryLightboxView({
         </span>
       </div>
 
-      {/* Carousel */}
+      {/* Carousel - área principal con flex-1 */}
       <div className="flex-1 flex items-center justify-center p-4">
-        <Carousel className="w-full max-w-4xl">
+        <Carousel className="w-full max-w-6xl">
           <CarouselContent>
             {images.map((img, index) => (
               <CarouselItem key={img.id}>
@@ -50,7 +50,9 @@ export default function GalleryLightboxView({
                     src={img.url}
                     alt={img.description}
                     fill
+                    sizes="100vw"
                     className="object-contain"
+                    priority={index === selectedImageIndex}
                   />
                 </div>
               </CarouselItem>
@@ -62,7 +64,7 @@ export default function GalleryLightboxView({
       </div>
 
       {/* Footer con descripción */}
-      <div className="p-4 border-t">
+      <div className="p-4 border-t bg-white">
         <p className="text-center text-gray-600">
           {images[selectedImageIndex]?.description}
         </p>

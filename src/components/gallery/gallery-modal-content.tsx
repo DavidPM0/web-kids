@@ -40,9 +40,9 @@ export default function GalleryModalContent({
     ];
 
     return (
-      <div className="p-6">
-        {/* Filtros */}
-        <div className="flex gap-2 mb-6">
+      <div className="flex flex-col h-full">
+        {/* Filtros - Header fijo */}
+        <div className="flex gap-2 p-6 pb-4 border-b bg-white">
           {categories.map((category) => (
             <Button
               key={category.key}
@@ -55,22 +55,25 @@ export default function GalleryModalContent({
           ))}
         </div>
 
-        {/* Grid de imágenes */}
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-          {filteredImages.map((img, index) => (
-            <div
-              key={img.id}
-              className="aspect-square relative cursor-pointer overflow-hidden rounded-lg group"
-              onClick={() => onGridImageClick(index)}
-            >
-              <Image
-                src={img.url}
-                alt={img.description}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          ))}
+        {/* Grid de imágenes - Área con scroll */}
+        <div className="flex-1 overflow-y-auto p-6">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
+            {filteredImages.map((img, index) => (
+              <div
+                key={img.id}
+                className="aspect-square relative cursor-pointer overflow-hidden rounded-lg group bg-gray-100"
+                onClick={() => onGridImageClick(index)}
+              >
+                <Image
+                  src={img.url}
+                  alt={img.description}
+                  fill
+                  sizes="(max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
