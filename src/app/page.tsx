@@ -1,4 +1,6 @@
+import { SearchVenueService } from "@/components/search/Search";
 import { Button, buttonVariants } from "@/components/ui/button";
+
 import Image from "next/image";
 
 export default function Home() {
@@ -59,6 +61,8 @@ export default function Home() {
           Currently available in Houston. More cities coming soon!
         </div>
       </section>
+
+      <SearchVenueService />
 
       {/* Formulario */}
       <section className="pt-44 px-6 md:px-20 lg:px-40">
