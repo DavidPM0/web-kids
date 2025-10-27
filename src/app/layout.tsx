@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { Baloo_Chettan_2 } from "next/font/google";
 import Footer from "@/components/Footer";
+import PartyGenieChat from "@/components/PartyGenieChat";
 
 const baloo = Baloo_Chettan_2({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Header />
         <main className="bg-[#FBF2E0]">{children}</main>
         <Footer />
+        <PartyGenieChat />
       </body>
     </html>
   );
