@@ -15,6 +15,7 @@ import { Separator } from "../ui/separator";
 import { Badge } from "../ui/badge";
 import { Cake, Check, Pizza, Star, Ticket, Users } from "lucide-react";
 import Image from "next/image";
+import VenueReviews from "../review/VenueReviews";
 
 export default function DetailVenueTab() {
   return (
@@ -248,15 +249,31 @@ export default function DetailVenueTab() {
           </CardContent>
         </Card>
       </div>
-      <div id="opiniones" className="scroll-m-20">
+      <div id="opiniones" className="scroll-m-20 grid grid-cols-3">
         <Card className="bg-transparent border-0 shadow-none ">
           <CardHeader>
             <CardTitle className="text-3xl font-bold">
               Opiniones de Google
             </CardTitle>
           </CardHeader>
+          <CardContent className="flex flex-col items-center justify-center gap-6 py-8">
+            {/* Rating con estrellas bien estilizado y grande */}
+            <div className="flex items-center gap-2">
+              <Star className="w-14 h-14 fill-yellow-400 text-yellow-400" />
+              <Star className="w-14 h-14 fill-yellow-400 text-yellow-400" />
+              <Star className="w-14 h-14 fill-yellow-400 text-yellow-400" />
+              <Star className="w-14 h-14 fill-yellow-400 text-yellow-400" />
+              <Star className="w-14 h-14 fill-yellow-400 text-yellow-400" />
+            </div>
+            <p className="text-7xl font-bold text-[#1C3658]">4.7</p>
+            <p className="text-xl font-semibold text-[#1C3658]">Excepcional</p>
+          </CardContent>
+        </Card>
+        <Card className="col-span-2 bg-transparent border-0 shadow-none ">
+          <CardHeader></CardHeader>
           <CardContent>
-            <p>Aquí iría el listado de reseñas...</p>
+            {/* Componente Inteligente de Comentarios */}
+            <VenueReviews />
           </CardContent>
         </Card>
       </div>
