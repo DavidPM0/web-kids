@@ -13,7 +13,19 @@ import { Label } from "../ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Separator } from "../ui/separator";
 import { Badge } from "../ui/badge";
-import { Cake, Check, Pizza, Star, Ticket, Users } from "lucide-react";
+import {
+  Cake,
+  Car,
+  Check,
+  IceCream,
+  MapPin,
+  Pizza,
+  ShoppingBasket,
+  Star,
+  Ticket,
+  Trees,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import VenueReviews from "../review/VenueReviews";
 
@@ -129,14 +141,69 @@ export default function DetailVenueTab() {
             <CardTitle>Explora el area</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="relative h-[250px] mb-6 grayscale">
+            <div className="relative h-[250px] mb-6 overflow-hidden rounded-lg border grayscale">
               <iframe
                 src="https://www.google.com/maps?q=New+York&output=embed"
                 width="100%"
                 height="100%"
                 loading="lazy"
-                className="border-none rounded-lg"
+                className="absolute top-0 left-0 w-full h-full border-none"
               ></iframe>
+            </div>
+            {/* Dirección del Venue */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-1">
+                <MapPin className="w-4 h-4 text-muted-foreground" />
+                <span className="font-semibold">Dirección del Venue</span>
+              </div>
+              <p className="text-sm text-muted-foreground ml-6">
+                Av. Ficticia 123, Houston, TX 77001
+              </p>
+            </div>
+
+            {/* Lista de Puntos de Interés para Padres */}
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <Car className="w-5 h-5 text-muted-foreground" />
+                  <span className="text-sm font-medium">Estacionamiento</span>
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  Gratuito en el local
+                </span>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <Trees className="w-5 h-5 text-muted-foreground" />
+                  <span className="text-sm font-medium">Parque Cercano</span>
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  5 min a pie
+                </span>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <IceCream className="w-5 h-5 text-muted-foreground" />
+                  <span className="text-sm font-medium">Heladería</span>
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  2 min a pie
+                </span>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <div className="flex items-center gap-3">
+                  <ShoppingBasket className="w-5 h-5 text-muted-foreground" />
+                  <span className="text-sm text-muted-foreground">
+                    Supermercado
+                  </span>
+                </div>
+                <span className="text-sm text-muted-foreground">
+                  3 min en auto
+                </span>
+              </div>
             </div>
           </CardContent>
         </Card>

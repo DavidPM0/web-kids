@@ -44,13 +44,13 @@ export default function VenuesPage() {
         {/* Sidebar izquierda */}
         <aside className="bg-[#F8BD36] p-6 w-full md:w-1/3 lg:w-1/3 border border-[#000000] shadow-[3px_3px_0_#000000] self-start">
           {/* Mapa encima de los filtros */}
-          <div className="relative h-[250px] mb-6 grayscale">
+          <div className="relative h-[250px] mb-6 overflow-hidden rounded-lg border grayscale">
             <iframe
               src="https://www.google.com/maps?q=New+York&output=embed"
               width="100%"
               height="100%"
               loading="lazy"
-              className="border-none rounded-lg"
+              className="absolute top-0 left-0 w-full h-full border-none"
             ></iframe>
           </div>
 
