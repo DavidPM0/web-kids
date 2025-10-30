@@ -13,6 +13,8 @@ interface GalleryModalContentProps {
   onGridImageClick: (index: number) => void;
   onBackToGrid: () => void;
   onViewChange: (view: "grid" | "lightbox") => void;
+  onPrevImage: () => void;
+  onNextImage: () => void;
 }
 
 export default function GalleryModalContent({
@@ -24,6 +26,8 @@ export default function GalleryModalContent({
   onGridImageClick,
   onBackToGrid,
   onViewChange,
+  onPrevImage,
+  onNextImage,
 }: GalleryModalContentProps) {
   // Filtrar imágenes según la categoría seleccionada
   const filteredImages = images.filter(
@@ -89,6 +93,8 @@ export default function GalleryModalContent({
           images={filteredImages}
           selectedImageIndex={selectedImageIndex}
           onBackToGrid={onBackToGrid}
+          onPrevImage={onPrevImage}
+          onNextImage={onNextImage}
         />
       )}
     </>

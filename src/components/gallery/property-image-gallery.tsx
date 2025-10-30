@@ -76,6 +76,7 @@ export default function PropertyImageGallery({
   // Funciones que se pasan a los componentes hijos
   const handleImageClick = (index: number) => {
     setSelectedImageIndex(index);
+    setCurrentFilter("all"); // Resetear filtro para mostrar todas las imágenes
     setCurrentView("lightbox");
     setIsModalOpen(true);
   };
@@ -84,6 +85,7 @@ export default function PropertyImageGallery({
     filter: "room" | "bathroom" | "exterior" | "all"
   ) => {
     setCurrentFilter(filter);
+    setSelectedImageIndex(0); // Resetear índice cuando cambia el filtro
     setCurrentView("grid");
   };
 
@@ -94,6 +96,24 @@ export default function PropertyImageGallery({
 
   const handleBackToGrid = () => {
     setCurrentView("grid");
+  };
+
+  const handlePrevImage = () => {
+    setSelectedImageIndex((prev) => {
+      const filteredImages = images.filter(
+        (img) => currentFilter === "all" || img.category === currentFilter
+      );
+      return prev > 0 ? prev - 1 : filteredImages.length - 1;
+    });
+  };
+
+  const handleNextImage = () => {
+    setSelectedImageIndex((prev) => {
+      const filteredImages = images.filter(
+        (img) => currentFilter === "all" || img.category === currentFilter
+      );
+      return prev < filteredImages.length - 1 ? prev + 1 : 0;
+    });
   };
 
   return (
@@ -121,6 +141,8 @@ export default function PropertyImageGallery({
               onGridImageClick={handleGridImageClick}
               onBackToGrid={handleBackToGrid}
               onViewChange={setCurrentView}
+              onPrevImage={handlePrevImage}
+              onNextImage={handleNextImage}
             />
           </div>
         </DialogContent>
