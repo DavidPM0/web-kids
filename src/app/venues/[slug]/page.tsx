@@ -1,5 +1,6 @@
 import PropertyImageGallery from "@/components/gallery/property-image-gallery";
 import { Button } from "@/components/ui/button";
+import DetailVenueTab from "@/components/venue/detail-venue-tab";
 import Image from "next/image";
 
 export default function VenueDetailPage() {
@@ -19,6 +20,10 @@ export default function VenueDetailPage() {
       </section>
       <div className="px-40 pt-20">
         <PropertyImageGallery />
+      </div>
+
+      <div className="pb-44 pt-20 px-40">
+        <DetailVenueTab />
       </div>
       {/* <div className="py-44 px-40 mx-auto flex flex-col lg:flex-row gap-12">
         
