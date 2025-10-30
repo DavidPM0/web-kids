@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function VenuesPage() {
   const venues = [
@@ -104,10 +105,16 @@ export default function VenuesPage() {
                 {/* Contenedor para los botones */}
                 <div className="flex gap-4 pt-4">
                   <Button variant="golden" size="golden">
-                    View Profile
+                    <Link href="/venues/aaa-shdsahda">View Profile</Link>
                   </Button>
-                  <Button variant="golden" size="golden">
-                    Check availability/Book
+                  <Button variant="golden" size="golden" asChild>
+                    <Link
+                      href="https://www.youtube.com/watch?v=vHTITVXyNSE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Check availability/Book
+                    </Link>
                   </Button>
                 </div>
               </div>

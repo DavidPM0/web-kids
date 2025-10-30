@@ -1,4 +1,5 @@
 import PropertyImageGallery from "@/components/gallery/property-image-gallery";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function VenueDetailPage() {
@@ -19,10 +20,10 @@ export default function VenueDetailPage() {
       <div className="px-40 pt-20">
         <PropertyImageGallery />
       </div>
-      <div className="py-44 px-40 mx-auto flex flex-col lg:flex-row gap-12">
-        {/* Columna izquierda - Galería */}
+      {/* <div className="py-44 px-40 mx-auto flex flex-col lg:flex-row gap-12">
+        
         <div className="flex flex-col lg:flex-row gap-6">
-          {/* Thumbnails */}
+          
           <div className="flex lg:flex-col gap-4">
             {[1, 2, 3, 4].map((_, i) => (
               <Image
@@ -36,7 +37,7 @@ export default function VenueDetailPage() {
             ))}
           </div>
 
-          {/* Imagen principal */}
+         
           <div className="sw-[400px] h-[400px]">
             <Image
               src="/img/venue.jpg"
@@ -48,7 +49,7 @@ export default function VenueDetailPage() {
           </div>
         </div>
 
-        {/* Columna derecha - Información */}
+        
         <div className="flex-1 space-y-6">
           <h1 className="text-4xl font-bold">
             Altitude Trampoline Park – Katy
@@ -64,7 +65,7 @@ export default function VenueDetailPage() {
             fun environment. Altitude Trampoline Park – Katy brings fun to life.
           </p>
 
-          {/* Countdown */}
+          
           <div className="font-bold">
             Hurry up! Deal ends in:{" "}
             <span className="bg-white text-black px-2 py-1 rounded">
@@ -72,7 +73,7 @@ export default function VenueDetailPage() {
             </span>
           </div>
 
-          {/* Add to Cart */}
+          
           <div className="flex items-center gap-4">
             <input
               type="number"
@@ -85,7 +86,7 @@ export default function VenueDetailPage() {
             </button>
           </div>
 
-          {/* Métodos de pago (placeholder) */}
+          
           <div className="mt-6">
             <Image
               src="/img/payment-methods.png"
@@ -95,7 +96,7 @@ export default function VenueDetailPage() {
             />
           </div>
 
-          {/* Tabs */}
+          
           <div className="mt-10 flex gap-4">
             <button className="bg-[#0E2A47] text-white px-4 py-2 rounded-full">
               Description
@@ -108,8 +109,8 @@ export default function VenueDetailPage() {
             </button>
           </div>
         </div>
-      </div>
-      <section className="pb-44 px-40">
+      </div> */}
+      <section className="py-44 px-40 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
@@ -156,7 +157,9 @@ export default function VenueDetailPage() {
         </div>
         {/* Botón final */}
         <div className="text-center mt-14">
-          <button>Shop All Products</button>
+          <Button variant="golden" size="golden">
+            Shop All Products
+          </Button>
         </div>
       </section>
     </div>

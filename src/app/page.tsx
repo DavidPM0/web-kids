@@ -65,7 +65,7 @@ export default function Home() {
       <SearchVenueService />
 
       {/* Formulario */}
-      <section className="pt-44 px-6 md:px-20 lg:px-40">
+      {/* <section className="pt-44 px-6 md:px-20 lg:px-40">
         <div className="mx-auto">
           <Image
             src="/pro-izquierda.png"
@@ -79,7 +79,7 @@ export default function Home() {
           </h2>
 
           <form className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {/* When are you planning to celebrate? */}
+          
             <div>
               <label className="block text-lg text-[#1C3658] mb-1">
                 When are you planning to celebrate?
@@ -91,7 +91,7 @@ export default function Home() {
               />
             </div>
 
-            {/* How many kids */}
+         
             <div>
               <label className="block text-lg text-[#1C3658] mb-1">
                 How many kids are going to be invited *
@@ -103,7 +103,7 @@ export default function Home() {
               />
             </div>
 
-            {/* Preferences */}
+           
             <div>
               <label className="block text-lg text-[#1C3658] mb-1">
                 Any preferences on party?
@@ -115,7 +115,7 @@ export default function Home() {
               />
             </div>
 
-            {/* First Name */}
+           
             <div>
               <label className="block text-lg text-[#1C3658] mb-1">
                 First Name
@@ -127,7 +127,7 @@ export default function Home() {
               />
             </div>
 
-            {/* Email */}
+          
             <div>
               <label className="block text-lg text-[#1C3658] mb-1">
                 Your Email
@@ -139,14 +139,13 @@ export default function Home() {
               />
             </div>
 
-            {/* Mobile */}
-            {/* Location */}
+           
             <div>
               <label className="block text-lg text-[#1C3658] mb-1">
                 Location
               </label>
               <select
-                defaultValue="" // Usamos defaultValue para que el placeholder funcione
+                defaultValue="" 
                 className="w-full px-3 py-2 border border-[#1C3658] text-[#1C3658] focus:outline-none focus:ring-2 focus:ring-[#1C3658]"
               >
                 <option value="" disabled>
@@ -168,7 +167,7 @@ export default function Home() {
               </select>
             </div>
 
-            {/* Additional Message */}
+            
             <div className="md:col-span-3">
               <label className="block text-lg text-[#1C3658] mb-1">
                 Additional Message
@@ -180,7 +179,7 @@ export default function Home() {
               />
             </div>
 
-            {/* Button */}
+            
             <div className="md:col-span-3 flex justify-center mt-4">
               <Button variant="golden" size="golden">
                 Explore Venues
@@ -188,7 +187,7 @@ export default function Home() {
             </div>
           </form>
         </div>
-      </section>
+      </section> */}
 
       {/* Productos */}
       <section className="py-44 px-40">
